@@ -1,0 +1,734 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/adrai/node-eventstore"
+
+    >eventstore (v1.12.2)</a>
+</h1>
+<h4>Node-eventstore is a node.js module for multiple databases. It can be very useful as eventstore if you work with (d)ddd, cqrs, eventsourcing, commands and events, etc.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eventstore">module eventstore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.eventstore">
+            function <span class="apidocSignatureSpan"></span>eventstore
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store">
+            function <span class="apidocSignatureSpan">eventstore.</span>Store
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.toString">
+            function <span class="apidocSignatureSpan">eventstore.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">eventstore.</span>Store.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eventstore.Store">module eventstore.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.Store">
+            function <span class="apidocSignatureSpan">eventstore.</span>Store
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.super_">
+            function <span class="apidocSignatureSpan">eventstore.Store.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.use">
+            function <span class="apidocSignatureSpan">eventstore.Store.</span>use
+            <span class="apidocSignatureSpan">(toRequire)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eventstore.Store.prototype">module eventstore.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.addEvents">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>addEvents
+            <span class="apidocSignatureSpan">(evts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.addSnapshot">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>addSnapshot
+            <span class="apidocSignatureSpan">(snap, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.cleanSnapshots">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>cleanSnapshots
+            <span class="apidocSignatureSpan">(query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.clear">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>clear
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.connect">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.disconnect">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getEvents">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEvents
+            <span class="apidocSignatureSpan">(query, skip, limit, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getEventsByRevision">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEventsByRevision
+            <span class="apidocSignatureSpan">(query, revMin, revMax, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getEventsSince">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEventsSince
+            <span class="apidocSignatureSpan">(commitStamp, skip, limit, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getLastEvent">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getLastEvent
+            <span class="apidocSignatureSpan">(query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getNewId">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getNewId
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getSnapshot">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getSnapshot
+            <span class="apidocSignatureSpan">(query, revMax, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.getUndispatchedEvents">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getUndispatchedEvents
+            <span class="apidocSignatureSpan">(query, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eventstore.Store.prototype.setEventToDispatched">
+            function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>setEventToDispatched
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eventstore" id="apidoc.module.eventstore">module eventstore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.eventstore" id="apidoc.element.eventstore.eventstore">
+        function <span class="apidocSignatureSpan"></span>eventstore
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">eventstore = function (options) {
+  options = options || {};
+
+  var Store;
+
+  try {
+    Store = getSpecificStore(options);
+  } catch (err) {
+    throw err;
+  }
+
+  return new Eventstore(options, new Store(options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store" id="apidoc.element.eventstore.Store">
+        function <span class="apidocSignatureSpan">eventstore.</span>Store
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(options) {
+  options = options || {};
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.toString" id="apidoc.element.eventstore.toString">
+        function <span class="apidocSignatureSpan">eventstore.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eventstore.Store" id="apidoc.module.eventstore.Store">module eventstore.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.Store" id="apidoc.element.eventstore.Store.Store">
+        function <span class="apidocSignatureSpan">eventstore.</span>Store
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store(options) {
+  options = options || {};
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.super_" id="apidoc.element.eventstore.Store.super_">
+        function <span class="apidocSignatureSpan">eventstore.Store.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.use" id="apidoc.element.eventstore.Store.use">
+        function <span class="apidocSignatureSpan">eventstore.Store.</span>use
+        <span class="apidocSignatureSpan">(toRequire)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (toRequire) {
+  var required;
+  try {
+    required = require(toRequire);
+  } catch (e) {
+    // workaround when `npm link`&#x27;ed for development
+    required = prequire(toRequire);
+  }
+  return required;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eventstore.Store.prototype" id="apidoc.module.eventstore.Store.prototype">module eventstore.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.addEvents" id="apidoc.element.eventstore.Store.prototype.addEvents">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>addEvents
+        <span class="apidocSignatureSpan">(evts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addEvents = function (evts, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// myAggregate.loadFromHistory(history);
+    });
+
+store a new event and commit it to store
+
+    es.getEventStream(&#x27;streamId&#x27;, function(err, stream) {
+stream.addEvent({ my: &#x27;event&#x27; });
+stream.<span class="apidocCodeKeywordSpan">addEvents</span>([{ my: &#x27;event2&#x27; }]);
+
+stream.commit();
+
+// or
+
+stream.commit(function(err, stream) {
+  console.log(stream.eventsToDispatch); // this is an array containing all added events in this commit.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.addSnapshot" id="apidoc.element.eventstore.Store.prototype.addSnapshot">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>addSnapshot
+        <span class="apidocSignatureSpan">(snap, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSnapshot = function (snap, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.cleanSnapshots" id="apidoc.element.eventstore.Store.prototype.cleanSnapshots">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>cleanSnapshots
+        <span class="apidocSignatureSpan">(query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanSnapshots = function (query, callback) {
+  silentWarning(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.clear" id="apidoc.element.eventstore.Store.prototype.clear">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>clear
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.connect" id="apidoc.element.eventstore.Store.prototype.connect">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function implementError(callback) {
+  var err = new Error(&#x27;Please implement this function!&#x27;);
+  if (callback) callback(err);
+  throw err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.disconnect" id="apidoc.element.eventstore.Store.prototype.disconnect">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function implementError(callback) {
+  var err = new Error(&#x27;Please implement this function!&#x27;);
+  if (callback) callback(err);
+  throw err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getEvents" id="apidoc.element.eventstore.Store.prototype.getEvents">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEvents
+        <span class="apidocSignatureSpan">(query, skip, limit, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEvents = function (query, skip, limit, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+for replaying your events or for rebuilding a viewmodel or just for fun...
+
+skip, limit always optional
+
+var skip = 0,
+    limit = 100; // if you omit limit or you define it as -1 it will retrieve until the end
+
+es.<span class="apidocCodeKeywordSpan">getEvents</span>(skip, limit, function(err, evts) {
+  // if (events.length === amount) {
+  //   events.next(function (err, nextEvts) {}); // just call next to retrieve the next page...
+  // } else {
+  //   // finished...
+  // }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getEventsByRevision" id="apidoc.element.eventstore.Store.prototype.getEventsByRevision">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEventsByRevision
+        <span class="apidocSignatureSpan">(query, revMin, revMax, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEventsByRevision = function (query, revMin, revMax, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+by revision
+
+revMin, revMax always optional
+
+var revMin = 5,
+    revMax = 8; // if you omit revMax or you define it as -1 it will retrieve until the end
+
+es.<span class="apidocCodeKeywordSpan">getEventsByRevision</span>(&#x27;streamId&#x27;, revMin, revMax, function(err, evts) {});
+
+// or
+
+es.getEventsByRevision({
+  aggregateId: &#x27;myAggregateId&#x27;,
+  aggregate: &#x27;person&#x27;,          // optional
+  context: &#x27;hr&#x27;                 // optional
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getEventsSince" id="apidoc.element.eventstore.Store.prototype.getEventsSince">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getEventsSince
+        <span class="apidocSignatureSpan">(commitStamp, skip, limit, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEventsSince = function (commitStamp, skip, limit, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+by commitStamp
+
+skip, limit always optional
+
+var skip = 0,
+    limit = 100; // if you omit limit or you define it as -1 it will retrieve until the end
+
+es.<span class="apidocCodeKeywordSpan">getEventsSince</span>(new Date(2015, 5, 23), skip, limit, function(err, evts) {
+  // if (events.length === amount) {
+  //   events.next(function (err, nextEvts) {}); // just call next to retrieve the next page...
+  // } else {
+  //   // finished...
+  // }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getLastEvent" id="apidoc.element.eventstore.Store.prototype.getLastEvent">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getLastEvent
+        <span class="apidocSignatureSpan">(query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastEvent = function (query, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // }
+});
+
+
+## get the last event
+for example to obtain the last revision nr
+
+es.<span class="apidocCodeKeywordSpan">getLastEvent</span>(&#x27;streamId&#x27;, function(err, evt) {
+});
+
+// or
+
+es.getLastEvent({ // free choice (all, only context, only aggregate, only aggregateId...)
+  context: &#x27;hr&#x27;,
+  aggregate: &#x27;person&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getNewId" id="apidoc.element.eventstore.Store.prototype.getNewId">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getNewId
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNewId = function (callback) {
+  var id = uuid().toString();
+  if (callback) callback(null, id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  aggregateId: &#x27;uuid&#x27;
+} function(err, evt) {
+});
+
+
+## obtain a new id
+
+es.<span class="apidocCodeKeywordSpan">getNewId</span>(function(err, newId) {
+  if(err) {
+    console.log(&#x27;ohhh :-(&#x27;);
+    return;
+  }
+
+  console.log(&#x27;the new id is: &#x27; + newId);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getSnapshot" id="apidoc.element.eventstore.Store.prototype.getSnapshot">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getSnapshot
+        <span class="apidocSignatureSpan">(query, revMax, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSnapshot = function (query, revMax, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.getUndispatchedEvents" id="apidoc.element.eventstore.Store.prototype.getUndispatchedEvents">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>getUndispatchedEvents
+        <span class="apidocSignatureSpan">(query, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUndispatchedEvents = function (query, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+});
+
+You can automatically clean older snapshots by configuring the number of snapshots to keep with `maxSnapshotsCount` in `eventstore
+` options.
+
+## own event dispatching (no event publisher function defined)
+
+es.<span class="apidocCodeKeywordSpan">getUndispatchedEvents</span>(function(err, evts) {
+// or es.getUndispatchedEvents(&#x27;streamId&#x27;, function(err, evts) {
+// or es.getUndispatchedEvents({ // free choice (all, only context, only aggregate, only aggregateId...)
+//                                context: &#x27;hr&#x27;,
+//                                aggregate: &#x27;person&#x27;,
+//                                aggregateId: &#x27;uuid&#x27;
+//                              }, function(err, evts) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eventstore.Store.prototype.setEventToDispatched" id="apidoc.element.eventstore.Store.prototype.setEventToDispatched">
+        function <span class="apidocSignatureSpan">eventstore.Store.prototype.</span>setEventToDispatched
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setEventToDispatched = function (id, callback) {
+  implementError(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // all undispatched events
+  console.log(evts);
+
+  // dispatch it and set the event as dispatched
+
+  for (var e in evts) {
+    var evt = evts[r];
+    es.<span class="apidocCodeKeywordSpan">setEventToDispatched</span>(evt, function(err) {});
+    // or
+    es.setEventToDispatched(evt.id, function(err) {});
+  }
+
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
