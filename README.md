@@ -1,4 +1,7 @@
-# api documentation for  [eventstore (v1.12.2)](https://github.com/adrai/node-eventstore)  [![npm package](https://img.shields.io/npm/v/npmdoc-eventstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-eventstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-eventstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-eventstore)
+# npmdoc-eventstore
+
+#### api documentation for  [eventstore (v1.12.2)](https://github.com/adrai/node-eventstore)  [![npm package](https://img.shields.io/npm/v/npmdoc-eventstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-eventstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-eventstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-eventstore)
+
 #### Node-eventstore is a node.js module for multiple databases. It can be very useful as eventstore if you work with (d)ddd, cqrs, eventsourcing, commands and events, etc.
 
 [![NPM](https://nodei.co/npm/eventstore.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/eventstore)
@@ -101,7 +104,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "1.12.2"
+    "version": "1.12.2",
+    "bin": {}
 }
 ```
 
